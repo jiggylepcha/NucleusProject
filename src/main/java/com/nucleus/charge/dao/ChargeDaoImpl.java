@@ -56,6 +56,7 @@ public class ChargeDaoImpl implements ChargeDao{
     @Override
     public int insert(NewCharge charge, String status) {
         int insertStatus = 0;
+        if(charge==null) return 0;
         try(Session session = getSession()){
             session.beginTransaction();
             try {
